@@ -1,2 +1,4 @@
 pyserial==3.4
 tqdm
+chipwhisperer
+matplotlib

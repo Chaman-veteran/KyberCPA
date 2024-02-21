@@ -10,3 +10,6 @@ bin/
 bin-host/
 compile_commands.json
 .vscode
+
+venv/
+mupq.log*
