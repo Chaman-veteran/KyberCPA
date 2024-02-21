@@ -1,3 +1,26 @@
+PATH_TO_FIRMWARE = 'bin/mupq_pqclean_crypto_kem_kyber512_clean_test.hex'
+
+# import chipwhisperer as CW
+# import matplotlib.pyplot as plt
+
+# scope = CW.scope()
+# target = CW.target(scope)
+
+# scope.default_setup()
+
+# CW.program_target(scope, CW.programmers.STM32FProgrammer, PATH_TO_FIRMWARE)
+
+# scope.arm()
+# target.simpleserial_write('p', bytearray([0]*16))
+
+# scope.capture()
+# target.read()
+
+# print(f'trig_count = {scope.adc.trig_count}')
+
+# plt.plot(scope.get_last_trace())
+# plt.show()
+
 import chipwhisperer as CW
 from mupq import platforms
 import matplotlib.pyplot as plt
@@ -5,13 +28,15 @@ import matplotlib.pyplot as plt
 cw = platforms.ChipWhisperer()
 
 cw.scope.arm()
-cw.target.simpleserial_write('p', bytearray([0]*16))
+cw.target.write(bytearray([0]*16))
 
-cw.run("firm.hex", expiterations=10)
+print(cw.run(PATH_TO_FIRMWARE, expiterations=10))
 
 print(cw.scope.capture())
 power_trace = cw.scope.get_last_trace()
-
-print(len(power_trace))
+    
 plt.plot(power_trace)
 plt.show()
+
+cw.scope.dis()
+cw.target.dis()
