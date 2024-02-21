@@ -13,3 +13,5 @@ compile_commands.json
 
 venv/
 mupq.log*
+obj/
+elf/
