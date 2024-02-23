@@ -27,10 +27,14 @@ import matplotlib.pyplot as plt
 
 cw = platforms.ChipWhisperer()
 
+cw.scope.gain.gain = 25
+cw.scope.adc.samples = 1000
+cw.scope.adc.basic_mode = "low"
+
 cw.scope.arm()
 cw.target.write(bytearray([0]*16))
 
-print(cw.run(PATH_TO_FIRMWARE, expiterations=10))
+print(cw.run(PATH_TO_FIRMWARE, expiterations=1))
 
 print(cw.scope.capture())
 power_trace = cw.scope.get_last_trace()
