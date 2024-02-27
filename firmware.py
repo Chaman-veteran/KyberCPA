@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 cw = platforms.ChipWhisperer()
 
 cw.scope.adc.samples = 1000
-cw.scope.adc.basic_mode = "low"
+cw.scope.adc.basic_mode = "rising_edge"
+cw.scope.io.tio1 = "high_z"
+cw.scope.trigger.triggers = "tio1"
 
 cw.scope.arm()
 
