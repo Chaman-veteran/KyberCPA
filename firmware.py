@@ -8,8 +8,6 @@ cw = platforms.ChipWhisperer()
 cw.scope.adc.samples = 1000
 cw.scope.adc.basic_mode = "rising_edge"
 
-cw.scope.arm()
-
 print(cw.run(PATH_TO_FIRMWARE))
 
 print(cw.scope.capture())
