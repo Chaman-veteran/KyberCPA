@@ -2,6 +2,6 @@
 	path = libopencm3
 	url = https://github.com/libopencm3/libopencm3.git
 
-[submodule "test"]
+[submodule "mupq"]
 	path = mupq
 	url = https://github.com/Chaman-veteran/mupq
