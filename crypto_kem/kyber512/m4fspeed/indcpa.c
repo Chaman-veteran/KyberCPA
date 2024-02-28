@@ -6,6 +6,9 @@
 #include "symmetric.h"
 #include "matacc.h"
 
+#include <libopencm3/stm32/f3/memorymap.h>
+#include <libopencm3/cm3/common.h>
+#include <libopencm3/stm32/f3/gpio.h>
 #include <string.h>
 #include <stdint.h>
 
@@ -106,7 +109,10 @@ void indcpa_enc(unsigned char *c,
     poly_frombytes(pkp, pk);
     int32_t v_tmp[KYBER_N];
     
+    //GPIOA_BSRR = (uint16_t)0x1000U; // TRIGGER_UP()
     poly_basemul_opt_16_32(v_tmp, &sp.vec[0], pkp, &sp_prime.vec[0]);
+    //GPIOA_BRR = (uint16_t)0x1000U;// TRIGGER_LOW()
+
     for (i = 1; i < KYBER_K - 1; i++) {
         poly_frombytes(pkp, pk + i*KYBER_POLYBYTES);
         poly_basemul_acc_opt_32_32(v_tmp, &sp.vec[i], pkp, &sp_prime.vec[i]);

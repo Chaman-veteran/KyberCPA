@@ -1,4 +1,4 @@
-PATH_TO_FIRMWARE = 'bin/mupq_pqclean_crypto_kem_kyber512_clean_test.hex'
+PATH_TO_FIRMWARE = 'bin/crypto_kem_kyber512_m4fspeed_test.hex'
 
 from mupq import platforms
 import matplotlib.pyplot as plt
@@ -7,8 +7,6 @@ cw = platforms.ChipWhisperer()
 
 cw.scope.adc.samples = 1000
 cw.scope.adc.basic_mode = "rising_edge"
-cw.scope.io.tio1 = "high_z"
-cw.scope.trigger.triggers = "tio1"
 
 cw.scope.arm()
 
