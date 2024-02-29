@@ -13,5 +13,5 @@ Fetch `mupq` and `pqclean` git submodules with the command `git submodule update
 ## How to build firmware
 Compile needed implementations with `python build_everything.py --platform=cw308t-stm32f3 --only=kyber512`
 
-The binary we're using in this test is the `mupq_pqclean_crypto_kem_kyber512_clean_test` hex.
+The binary we're using in this test is the `crypto_kem_kyber512_m4fspeed_test` hex.
 
