@@ -5,12 +5,8 @@
 #include "randombytes.h"
 #include "symmetric.h"
 #include "matacc.h"
+#include "gpio_trigger.h"
 
-#include "hal.h"
-#include <libopencm3/stm32/f3/memorymap.h>
-#include <libopencm3/cm3/common.h>
-#include <libopencm3/stm32/f3/rcc.h>
-#include <libopencm3/stm32/f3/gpio.h>
 #include <string.h>
 #include <stdint.h>
 
@@ -111,24 +107,9 @@ void indcpa_enc(unsigned char *c,
     poly_frombytes(pkp, pk);
     int32_t v_tmp[KYBER_N];
 
-    // trigger_setup()
-    rcc_periph_clock_enable(RCC_AHBENR);
-    // HAL_GPIO_INIT
-    // https://github.com/newaetech/chipwhisperer/blob/develop/hardware/victims/firmware/hal/stm32f3/stm32f3_hal_lowlevel.c#L661
-    // https://github.com/libopencm3/libopencm3/blob/9545471e4861090a77f79c4458eb19ec771e23d9/include/libopencm3/stm32/common/gpio_common_f234.h#L63
-    // Modif du registre OSPEEDR
-    GPIOA_OSPEEDR = GPIOA_OSPEEDR & ~GPIO_OSPEED(GPIO_OSPEED_2MHZ, 0) | GPIO_OSPEED(GPIO_OSPEED_100MHZ, 0);
-    // TODO: Modif du registre OTYPER
-    // Modif du registre Pull-up/Pull-down
-    GPIOA_PUPDR = GPIOA_PUPDR & ~GPIO_PUPD(GPIO_PUPD_NONE, 0) | GPIO_PUPD(GPIO_PUPD_NONE, 0);
-    // trigger_low
-    gpio_clear(GPIOA, GPIO12); // TRIGGER_LOW()
-
-    gpio_set(GPIOA, GPIO12); // TRIGGER_UP()
-    // gpio_toggle(GPIOA, GPIO12);
-    // gpio_port_write(GPIOA, GPIO12);
+    trigger_high();
     poly_basemul_opt_16_32(v_tmp, &sp.vec[0], pkp, &sp_prime.vec[0]);
-    gpio_clear(GPIOA, GPIO12);// TRIGGER_LOW()
+    trigger_low();
 
     for (i = 1; i < KYBER_K - 1; i++) {
         poly_frombytes(pkp, pk + i*KYBER_POLYBYTES);
