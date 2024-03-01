@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 cw = platforms.ChipWhisperer()
 
-cw.scope.adc.samples = 1000
+cw.scope.adc.samples = 200
 cw.scope.adc.basic_mode = "rising_edge"
 
 print(cw.run(PATH_TO_FIRMWARE))
