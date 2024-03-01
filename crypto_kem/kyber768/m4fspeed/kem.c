@@ -4,7 +4,6 @@
 #include "randombytes.h"
 #include "symmetric.h"
 #include "verify.h"
-#include "gpio_trigger.h"
 
 #include <stdlib.h>
 
@@ -53,7 +52,7 @@ int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk
 
     hash_h(buf + KYBER_SYMBYTES, pk, KYBER_PUBLICKEYBYTES);                  /* Multitarget countermeasure for coins + contributory KEM */
     hash_g(kr, buf, 2 * KYBER_SYMBYTES);
-    trigger_setup();
+    
     indcpa_enc(ct, buf, pk, kr + KYBER_SYMBYTES);                            /* coins are in kr+KYBER_SYMBYTES */
 
     hash_h(kr + KYBER_SYMBYTES, ct, KYBER_CIPHERTEXTBYTES);                  /* overwrite coins in kr with H(c) */
