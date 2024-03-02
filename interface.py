@@ -82,7 +82,7 @@ class M4Settings(mupq.PlatformSettings):
         self.skip_list = []
         for impl in skiplist.skip_list:
             if impl['estmemory'] > self.platform_memory[platform] \
-              or (only.lower() not in impl['scheme']):
+              or (only.lower() != impl['scheme']):
                 impl = impl.copy()
                 del impl['estmemory']
                 self.skip_list.append(impl)
