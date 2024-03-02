@@ -15,3 +15,7 @@ Compile needed implementations with `python build_everything.py --platform=cw308
 
 The binary we're using in this test is the `crypto_kem_kyber512_m4fspeed_test` hex.
 
+## How to get the power consumption traces
+```py
+python get_traces.py
+```
