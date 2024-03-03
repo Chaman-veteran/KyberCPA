@@ -235,10 +235,7 @@ void indcpa_enc(unsigned char *c,
 
     poly_frombytes(pkp, pk);
     int32_t v_tmp[KYBER_N];
-    trigger_setup();
-    trigger_high();
     poly_basemul_opt_16_32(v_tmp, &sp.vec[0], pkp, &sp_prime.vec[0]);
-    trigger_low();
 
     for (i = 1; i < KYBER_K - 1; i++) {
         poly_frombytes(pkp, pk + i*KYBER_POLYBYTES);
@@ -350,9 +347,12 @@ void __attribute__ ((noinline)) indcpa_dec(unsigned char *m,
     int32_t r_tmp[KYBER_N];
     int i;
     
+    trigger_setup();
+    trigger_high();
     poly_unpackdecompress(&mp, c, 0);
     poly_ntt(&mp);
     poly_frombytes_mul_16_32(r_tmp, &mp, sk);
+    trigger_low();
     for(i = 1; i < KYBER_K - 1; i++) {
         poly_unpackdecompress(&bp, c, i);
         poly_ntt(&bp);
