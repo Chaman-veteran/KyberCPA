@@ -4,6 +4,7 @@
 #include "randombytes.h"
 #include "symmetric.h"
 #include "verify.h"
+#include "hal.h"
 
 #include <stdlib.h>
 

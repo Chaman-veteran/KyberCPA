@@ -29,6 +29,7 @@ power_traces = cw.scope.get_last_trace_segmented()
 print(f'Captured {len(power_traces)} segments of {len(power_traces[0])} points each.')
 
 plt.plot(power_traces[-1])
+plt.plot(power_traces[0])
 plt.show()
 
 cw.scope.dis()
@@ -36,3 +37,4 @@ cw.target.dis()
 
 with open('traces.log', 'a+') as f:
     f.write(dumps(power_traces.tolist()))
+    f.write('\n')

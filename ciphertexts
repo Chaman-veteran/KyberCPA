@@ -1,0 +1,2556 @@
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64591 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64591 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 24 segments of 1002 points each.

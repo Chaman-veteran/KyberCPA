@@ -348,6 +348,13 @@ void __attribute__ ((noinline)) indcpa_dec(unsigned char *m,
     int i;
     
     trigger_setup();
+    char str[12];
+    hal_send_str("++++");
+    for (i = 0; i < sizeof(c); i++){
+        sprintf(str, "%d", c[i]);
+        hal_send_str(str);
+    }
+    hal_send_str("++++");
     trigger_high();
     poly_unpackdecompress(&mp, c, 0);
     poly_ntt(&mp);
@@ -357,10 +364,12 @@ void __attribute__ ((noinline)) indcpa_dec(unsigned char *m,
         poly_unpackdecompress(&bp, c, i);
         poly_ntt(&bp);
         poly_frombytes_mul_32_32(r_tmp, &bp, sk + i*KYBER_POLYBYTES);
-    }
+    };
+    trigger_high();
     poly_unpackdecompress(&bp, c, i);
     poly_ntt(&bp);
     poly_frombytes_mul_32_16(&mp, &bp, sk + i*KYBER_POLYBYTES, r_tmp);
+    trigger_low();
 
     poly_invntt(&mp);
     poly_decompress(v, c+KYBER_POLYVECCOMPRESSEDBYTES);
