@@ -40,6 +40,8 @@ power_traces = cw.scope.get_last_trace_segmented()
 print(f'Captured {len(power_traces)} segments of {len(power_traces[0])} points each.')
 
 plt.plot(power_traces[0])
+plt.xlabel('Sample')
+plt.ylabel('Power consumption')
 plt.show()
 
 cw.scope.dis()

@@ -52,23 +52,27 @@ def pkhtb(byte_1: bytes, byte_2: bytes) -> bytes:
 # For example, x = 0.6,
 candidates_k2k3 = []
 print('Guessing k2k3...')
-for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(1, part_key_length))):
+for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**5, 29446+2**5))):#1, part_key_length))):
     # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
     # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
     k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smultt
     rst = np.asarray([hammingWeight(smultt(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
 
-    for sample_trace in sample_matrix:
-        # # 2. Compute Pearson correlation coefficient between Ti and rst for all i and keep the biggest value in absolute PCCk2k3.
-        pcc_k2k3 = abs(pearsonr(sample_trace, rst)[0])
-        if pcc_k2k3 > max_pearson_corr:
-            candidates_k2k3.append(k2k3)
-            break
+    # # 2. Compute Pearson correlation coefficient between Ti and rst for all i and keep the biggest value in absolute PCCk2k3.
+    pearson_traces = [abs(pearsonr(sample_trace, rst)[0]) for sample_trace in sample_matrix]
+    max_pcc = max(pearson_traces)
+    if max_pcc > max_pearson_corr:
+        candidates_k2k3.append((k0k1k2k3, max_pcc))
 
-rst = np.asarray([hammingWeight(smultt(ciphertext, bytes(2) + candidates_k2k3[0])) for ciphertext in ciphertexts])
+
+k2k3 = max(candidates_k2k3, key=lambda x: x[1])[0]
+print(k2k3)
+rst = np.asarray([hammingWeight(smultt(ciphertext, k2k3)) for ciphertext in ciphertexts])
 pearson_traces = [pearsonr(sample_trace, rst)[0] for sample_trace in sample_matrix]
 
 plt.plot(pearson_traces)
+plt.xlabel('Sample')
+plt.ylabel('PCC')
 plt.show()
 
 exit()
