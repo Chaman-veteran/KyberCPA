@@ -45,44 +45,51 @@ def smultt(byte_1: bytes, byte_2: bytes) -> bytes:
     return (int.from_bytes(byte_1[3:1:-1]) * int.from_bytes(byte_2[3:1:-1])).to_bytes(4)
 
 def pkhtb(byte_1: bytes, byte_2: bytes) -> bytes:
-    return byte_1[3:1:-1] + byte_2[2:0:-1]
+    return byte_1[3:1:-1] + byte_2[1:-1:-1]
 
 # 3. Repeat step 1-2 for all possibilities of k2k3 and keep a sample S = {k2k3 such that P CCk2k3 > x},
 # x being the chosen discriminant.
 # For example, x = 0.6,
 candidates_k2k3 = []
 print('Guessing k2k3...')
-for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(1, part_key_length))):
+for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**5, 29446+2**5))):
     # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
     # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
     k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smultt
     rst = np.asarray([hammingWeight(smultt(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
 
-    for sample_trace in sample_matrix:
-        # # 2. Compute Pearson correlation coefficient between Ti and rst for all i and keep the biggest value in absolute PCCk2k3.
-        pcc_k2k3 = abs(pearsonr(sample_trace, rst)[0])
-        if pcc_k2k3 > max_pearson_corr:
-            candidates_k2k3.append(k2k3)
-            break
+    # # 2. Compute Pearson correlation coefficient between Ti and rst for all i and keep the biggest value in absolute PCCk2k3.
+    pearson_traces = [abs(pearsonr(sample_trace, rst)[0]) for sample_trace in sample_matrix]
+    max_pcc = max(pearson_traces)
+    if max_pcc > max_pearson_corr:
+        candidates_k2k3.append((k2k3, max_pcc))
 
-rst = np.asarray([hammingWeight(smultt(ciphertext, bytes(2) + candidates_k2k3[0])) for ciphertext in ciphertexts])
-pearson_traces = [pearsonr(sample_trace, rst)[0] for sample_trace in sample_matrix]
+awaited_key = b'\x00\x00s\x06'
+print(any(map(lambda k: awaited_key == k[0], candidates_k2k3)))
+print(len(candidates_k2k3))
 
-plt.plot(pearson_traces)
-plt.show()
+# k2k3 = max(candidates_k2k3, key=lambda x: x[1])[0]
+# print(k2k3)
+# rst = np.asarray([hammingWeight(smultt(ciphertext, k2k3)) for ciphertext in ciphertexts])
+# pearson_traces = [pearsonr(sample_trace, rst)[0] for sample_trace in sample_matrix]
 
-exit()
+# plt.plot(pearson_traces)
+# plt.xlabel('Sample')
+# plt.ylabel('PCC')
+# plt.show()
+
+max_pearson_corr = 0.7
 
 # 4. Fix k2k3 ∈ S, make a guess for k0k1 and compute the result rst′ of pkhtb for all of the ciphertexts.
-# Then compute Pearson correlation between rst′ and the power traces, keep the largest value in absolute PCCk0k1k2k3 .
+# Then compute Pearson correlation between rst′ and the power traces, keep the largest value in absolute PCCk0k1k2k3.
 candidates_k0k1k2k3 = []
 print('Guessing k0k1k2k3...')
-for k2k3 in tqdm(candidates_k2k3):
+for k2k3 in map(lambda k: k[0], tqdm(candidates_k2k3)):
     # 5. Redo step 4 for all the k0k1 ∈ S.
-    for k0k1 in range(2**5):#part_key_length)):
+    for k0k1 in range(16780-2**3, 16780+2**3):
         k0k1k2k3 = k0k1.to_bytes(2) + k2k3
-        rst = asarray([hammingWeight(pkhtb(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
-  
+        rst = np.asarray([hammingWeight(pkhtb(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
+
         pearson_traces = [abs(pearsonr(sample_trace, rst)[0]) for sample_trace in sample_matrix]
         max_pcc = max(pearson_traces)
         if max_pcc > max_pearson_corr:
@@ -90,11 +97,12 @@ for k2k3 in tqdm(candidates_k2k3):
 
 # 6. The part of the key k0k1k2k3 with the largest PCCk0k1k2k3 is the correct guess.
 key = max(candidates_k0k1k2k3, key=lambda x: x[1])
+print("Key = ", key)
+awaited_key = b'A\x8cs\x06'
+print(any(map(lambda k: awaited_key == k[0], candidates_k0k1k2k3)))
+print(len(candidates_k0k1k2k3))
 
 rst = [hammingWeight(pkhtb(ciphertext, key[0])) for ciphertext in ciphertexts]
 pearson_traces = [pearsonr(sample_trace, rst)[0] for sample_trace in sample_matrix]
 plt.plot(pearson_traces)
 plt.show()
-
-print("Key = ", key)
-
