@@ -1,0 +1,2658 @@
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64527 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64527 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+246
+79
+215
+72
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+121
+145
+151
+211
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+155
+247
+235
+123
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+112
+75
+57
+82
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+250
+195
+72
+51
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+221
+64
+144
+166
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+187
+65
+169
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+6
+12
+25
+180
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+149
+226
+82
+181
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+172
+33
+226
+50
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+254
+70
+158
+253
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+196
+95
+230
+194
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+24
+248
+74
+55
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+169
+74
+224
+209
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+80
+137
+12
+99
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+99
+183
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+49
+227
+45
+206
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+237
+68
+41
+137
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+123
+169
+248
+162
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+36
+6
+134
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+43
+107
+74
+166
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+204
+15
+27
+217
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+212
+146
+151
+247
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+182
+60
+157
+249
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+212
+128
+187
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+33
+235
+168
+215
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+3
+13
+32
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+39
+51
+191
+197
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+146
+124
+233
+171
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+64
+213
+1
+209
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+31
+241
+100
+204
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+208
+86
+141
+108
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+102
+68
+78
+83
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+35
+52
+108
+86
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+122
+37
+87
+229
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+20
+237
+46
+9
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+56
+68
+206
+165
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+150
+219
+130
+171
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+141
+159
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+31
+163
+72
+32
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+71
+155
+214
+91
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+109
+236
+198
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+247
+168
+111
+90
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+228
+89
+222
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+64
+162
+107
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+232
+186
+179
+217
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+218
+6
+78
+30
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+64
+73
+176
+42
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+74
+38
+62
+16
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+192
+14
+142
+177
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+165
+181
+152
+33
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+203
+224
+104
+108
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+240
+65
+217
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+237
+233
+121
+77
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+235
+139
+46
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+142
+139
+193
+6
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+233
+164
+93
+174
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+25
+248
+231
+129
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+186
+93
+210
+45
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+116
+154
+46
+211
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+15
+147
+160
+76
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+143
+186
+46
+131
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+209
+7
+168
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+161
+230
+207
+108
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+38
+224
+115
+1
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+31
+111
+30
+140
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+197
+188
+68
+168
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+91
+70
+51
+24
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+208
+105
+86
+234
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+13
+23
+74
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+218
+122
+170
+229
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+133
+25
+5
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+53
+59
+63
+29
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+134
+28
+114
+62
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+26
+98
+44
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+110
+199
+147
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+112
+49
+253
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+33
+206
+127
+48
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+186
+244
+117
+101
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+151
+3
+201
+76
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+68
+91
+9
+202
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+66
+64
+72
+2
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+112
+102
+162
+22
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+212
+228
+157
+241
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+26
+96
+47
+61
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+87
+254
+8
+111
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+82
+60
+82
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+7
+108
+166
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+107
+80
+242
+193
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+133
+185
+159
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+30
+210
+221
+148
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+145
+30
+96
+122
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+1
+146
+4
+241
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+0
+224
+52
+107
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+107
+34
+103
+30
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 119 segments of 201 points each.
+Detected known STMF32: STM32F302xB(C)/303xB(C)
+Extended erase (0x44), this can take ten seconds or more
+Attempting to program 64527 bytes at 0x8000000
+STM32F Programming flash...
+STM32F Reading flash...
+Verified flash OK, 64527 bytes
+DONE key pair generation!
+DONE encapsulation!
+++++
+140
+24
+157
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+50
+34
+37
+12
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+63
+142
+186
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+211
+189
+73
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+141
+190
+187
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+63
+159
+104
+163
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+19
+241
+234
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+114
+200
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+174
+182
+119
+198
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+177
+219
+208
+17
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+17
+19
+240
+106
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+239
+123
+183
+255
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+73
+134
+148
+207
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+124
+193
+26
+235
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+52
+243
+121
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+22
+107
+147
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+141
+192
+86
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+118
+176
+55
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+90
+224
+119
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+249
+169
+181
+150
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+69
+178
+183
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+164
+131
+136
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+183
+107
+227
+227
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+11
+73
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+144
+17
+24
+250
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+246
+79
+215
+72
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+121
+145
+151
+211
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+155
+247
+235
+123
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+112
+75
+57
+82
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+250
+195
+72
+51
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+221
+64
+144
+166
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+187
+65
+169
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+6
+12
+25
+180
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+149
+226
+82
+181
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+172
+33
+226
+50
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+254
+70
+158
+253
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+196
+95
+230
+194
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+24
+248
+74
+55
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+169
+74
+224
+209
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+80
+137
+12
+99
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+216
+99
+183
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+49
+227
+45
+206
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+237
+68
+41
+137
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+123
+169
+248
+162
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+181
+36
+6
+134
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+43
+107
+74
+166
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+204
+15
+27
+217
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+212
+146
+151
+247
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+182
+60
+157
+249
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+212
+128
+187
+56
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+33
+235
+168
+215
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+3
+13
+32
+151
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+39
+51
+191
+197
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+146
+124
+233
+171
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+64
+213
+1
+209
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+31
+241
+100
+204
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+208
+86
+141
+108
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+102
+68
+78
+83
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+35
+52
+108
+86
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+122
+37
+87
+229
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+20
+237
+46
+9
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+56
+68
+206
+165
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+150
+219
+130
+171
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+231
+141
+159
+242
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+31
+163
+72
+32
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+71
+155
+214
+91
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+109
+236
+198
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+247
+168
+111
+90
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+228
+89
+222
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+64
+162
+107
+53
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+232
+186
+179
+217
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+218
+6
+78
+30
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+64
+73
+176
+42
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+74
+38
+62
+16
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+192
+14
+142
+177
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+165
+181
+152
+33
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+203
+224
+104
+108
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+240
+65
+217
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+237
+233
+121
+77
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+235
+139
+46
+41
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+142
+139
+193
+6
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+233
+164
+93
+174
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+25
+248
+231
+129
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+186
+93
+210
+45
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+116
+154
+46
+211
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+15
+147
+160
+76
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+143
+186
+46
+131
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+41
+209
+7
+168
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+161
+230
+207
+108
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+38
+224
+115
+1
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+31
+111
+30
+140
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+197
+188
+68
+168
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+91
+70
+51
+24
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+208
+105
+86
+234
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+213
+13
+23
+74
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+218
+122
+170
+229
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+133
+25
+5
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+53
+59
+63
+29
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+134
+28
+114
+62
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+26
+98
+44
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+110
+199
+147
+184
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+112
+49
+253
+44
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+33
+206
+127
+48
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+186
+244
+117
+101
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+151
+3
+201
+76
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+68
+91
+9
+202
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+66
+64
+72
+2
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+112
+102
+162
+22
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+212
+228
+157
+241
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+26
+96
+47
+61
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+87
+254
+8
+111
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+179
+82
+60
+82
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+7
+108
+166
+221
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+107
+80
+242
+193
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+133
+185
+159
+161
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+30
+210
+221
+148
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+145
+30
+96
+122
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+1
+146
+4
+241
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+0
+224
+52
+107
+++++
+DONE decapsulation!
+OK KEYS
+
++
+DONE encapsulation!
+++++
+107
+34
+103
+30
+++++
+DONE decapsulation!
+OK KEYS
+
++
+
+Captured 119 segments of 201 points each.
