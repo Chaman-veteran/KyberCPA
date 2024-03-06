@@ -3,7 +3,6 @@ PATH_TO_FIRMWARE = 'bin/crypto_kem_kyber512_m4fspeed_test.hex'
 from mupq import platforms
 import matplotlib.pyplot as plt
 from json import dumps
-from argparse import ArgumentParser
 
 """
 Note copied from CW documentation when using the segment mode:
@@ -13,16 +12,6 @@ Note copied from CW documentation when using the segment mode:
 For more information, see: https://github.com/newaetech/chipwhisperer-jupyter/blob/84a9feabcfe5f1b76e31c4ac7d96d00f2577685c/demos/Using%20Segmented%20Memory%20for%20Hardware%20AES%20(STM32F4).ipynb#L185
 In our case (with a CW-Lite), max_fifo_size = 24400
 """
-
-parser = ArgumentParser(description="Get traces from kyber512 implementation")
-parser.add_argument(
-        "--save-traces",
-        dest='save_traces',
-        default=False,
-    )
-parser.parse_args()
-args = vars(parser.parse_args())
-save_traces = bool(args.get('save_traces'))
 
 cw = platforms.ChipWhisperer()
 
@@ -39,13 +28,16 @@ power_traces = cw.scope.get_last_trace_segmented()
 
 print(f'Captured {len(power_traces)} segments of {len(power_traces[0])} points each.')
 
+<<<<<<< HEAD
+=======
+# plt.plot(power_traces[-1])
+>>>>>>> parent of a6e5a14 (Revert "Reapply "ajout: shéma des dépendances en draw.io"")
 plt.plot(power_traces[0])
 plt.show()
 
 cw.scope.dis()
 cw.target.dis()
 
-if save_traces:
-    with open('traces.log', 'a+') as f:
-        f.write(dumps(power_traces.tolist()))
-        f.write('\n')
+with open('traces.log', 'a+') as f:
+    f.write(dumps(power_traces.tolist()))
+    f.write('\n')
