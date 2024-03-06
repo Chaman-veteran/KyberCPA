@@ -26,7 +26,7 @@ save_traces = bool(args.get('save_traces'))
 
 cw = platforms.ChipWhisperer()
 
-cw.scope.adc.samples = 200
+cw.scope.adc.samples = 1000 #200
 cw.scope.adc.basic_mode = "rising_edge"
 cw.scope.adc.fifo_fill_mode = "segment"
 
@@ -39,10 +39,6 @@ power_traces = cw.scope.get_last_trace_segmented()
 
 print(f'Captured {len(power_traces)} segments of {len(power_traces[0])} points each.')
 
-<<<<<<< HEAD
-=======
-# plt.plot(power_traces[-1])
->>>>>>> 3709734 (ajout: shéma des dépendances en draw.io)
 plt.plot(power_traces[0])
 plt.show()
 
