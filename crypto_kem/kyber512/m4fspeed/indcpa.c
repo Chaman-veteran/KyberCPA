@@ -130,8 +130,6 @@ void trigger_setup() {
 
 void trigger_high() {
     gpio_set(GPIOA, GPIO12);
-    // gpio_toggle(GPIOA, GPIO12);
-    // gpio_port_write(GPIOA, GPIO12);
 }
 
 void trigger_low() {

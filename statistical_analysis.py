@@ -18,7 +18,7 @@ def parse_firmware_output(output):
                         ciphertexts.append(ciphertext)
                     ciphertext = bytes()
             elif readingCT:
-                ciphertext += int(line).to_bytes()
+                ciphertext += int(line).to_bytes(2, signed=True)
 
 parse_firmware_output('ciphertexts')
 
@@ -42,20 +42,29 @@ def hammingWeight(byte: bytes) -> int:
     return int.from_bytes(byte).bit_count()
 
 def smultt(bytes_1: bytes, bytes_2: bytes) -> bytes:
-    return (int.from_bytes(bytes_1[3:1:-1]) * int.from_bytes(bytes_2[3:1:-1])).to_bytes(4)
+    return (int.from_bytes(bytes_1[3:1:-1], signed=True) * int.from_bytes(bytes_2[3:1:-1], signed=True)).to_bytes(4, signed=True)
 
 def smulbb(bytes_1: bytes, bytes_2: bytes) -> bytes:
-    return (int.from_bytes(bytes_1[1:-1:-1]) * int.from_bytes(bytes_2[1:-1:-1])).to_bytes(4)
+    return (int.from_bytes(bytes_1[1:-1:-1], signed=True) * int.from_bytes(bytes_2[1:-1:-1], signed=True)).to_bytes(4, signed=True)
+
+def smulbt(bytes_1: bytes, bytes_2: bytes) -> bytes:
+    return (int.from_bytes(bytes_1[1:-1:-1], signed=True) * int.from_bytes(bytes_2[3:1:-1], signed=True)).to_bytes(4, signed=True)
 
 # Rq: name non official
 def smadd(bytes_1 : bytes, bytes_2 : bytes) -> bytes:
-    return (int.from_bytes(bytes_1) + int.from_bytes(bytes_2)).to_bytes(4)
+    return (int.from_bytes(bytes_1, signed=True) + int.from_bytes(bytes_2, signed=True)).to_bytes(4, signed=True)
 
 def smlabb(bytes_1 : bytes, bytes_2 : bytes, bytes_3 : bytes) -> bytes:
     return smadd(smulbb(bytes_1, bytes_2), bytes_3)
 
-def pkhtb(bytes_1: bytes, bytes_2: bytes) -> bytes:
-    return bytes_1[3:1:-1] + bytes_2[1:-1:-1]
+def smlabt(bytes_1: bytes, bytes_2: bytes, bytes_3: bytes) -> bytes:
+    return smadd(smulbt(bytes_1, bytes_2), bytes_3)
+
+def smulwt(bytes_1: bytes, bytes_2: bytes) -> bytes:
+    return ((int.from_bytes(bytes_1, signed=True) * int.from_bytes(bytes_2[2:4], signed=True)) >> 16).to_bytes(4, signed=True)
+
+def smuadx(bytes_1: bytes, bytes_2: bytes) -> bytes:
+    return int.from_bytes(bytes_1[0:2], signed=True) * int.from_bytes(bytes_2, signed=True).to_bytes(4, signed=True)
 
 prec = np.float64
 
@@ -85,6 +94,9 @@ def pearson_traces(rstr) -> int:
     max_pcc = max(pcc_traces, default=0)
     return max_pcc
 
+qa = (26632).to_bytes(4)
+q = (3329).to_bytes(4)
+
 def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
     """
     Keeps a sample S = {k2k3 such that P CCk2k3 > x}, x being the chosen discriminant.
@@ -93,8 +105,13 @@ def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
         # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
         # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
         k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smultt
+        
+        # In ntt.c -> const int32_t zetas[64] = {21932846, 3562152210, 752167598, 3417653460, 2112004045...
+        zeta = 2112004045
+        tmp = smulwt(zeta.to_bytes(4), k0k1k2k3)
+        tmp = smlabt(tmp, q, qa)
 
-        rst = np.asarray([hammingWeight(smultt(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
+        rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
         rstmean = rst.mean(dtype=prec)
         rstm = rst.astype(prec) - rstmean
         normrstm = np.linalg.norm(rstm)
@@ -106,14 +123,15 @@ def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
 
 # !! To plot here, stop the program right after, iterators can only be used once !!
 
-# k2k3 = max(k2k3_guesser(), key=lambda x: x[1])
-# rst = np.asarray([hammingWeight(smultt(ciphertext, k2k3)) for ciphertext in ciphertexts])
-# pearson_traces = [pearsonr(sample_trace, rst)[0] for sample_trace in sample_matrix]
+k2k3 = max(k2k3_guesser(), key=lambda x: x[1])
+rst = np.asarray([hammingWeight(smultt(ciphertext, k2k3)) for ciphertext in ciphertexts])
+pcc_tab = [pearson(sample_trace, rst) for sample_trace in sample_matrix]
 
-# plt.plot(pearson_traces)
-# plt.xlabel('Sample')
-# plt.ylabel('PCC')
-# plt.show()
+plt.plot(pcc_tab)
+plt.xlabel('Sample')
+plt.ylabel('PCC')
+plt.show()
+exit()
 
 # 4. Fix k2k3 ∈ S, make a guess for k0k1 and compute the result rst′ of pkhtb for all of the ciphertexts.
 # Then compute Pearson correlation between rst′ and the power traces, keep the largest value in absolute PCCk0k1k2k3.
@@ -123,7 +141,7 @@ for k2k3 in map(lambda k: k[0], k2k3_guesser()):
     for k0k1 in range(16780-2**3, 16780+2**3):
         k0k1k2k3 = k0k1.to_bytes(2) + k2k3
 
-        rst = np.asarray([hammingWeight(pkhtb(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
+        rst = np.asarray([hammingWeight(smuadx(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
         rstmean = rst.mean(dtype=prec)
         rstm = rst.astype(prec) - rstmean
         normrstm = np.linalg.norm(rstm)
