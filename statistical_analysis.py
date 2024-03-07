@@ -72,19 +72,19 @@ def pearson_traces(rstr) -> int:
 
 qa = (26632).to_bytes(4)
 q = (3329).to_bytes(4)
+# In ntt.c -> const int32_t zetas[64] = {21932846, 3562152210, 752167598, 3417653460, 2112004045, 932791035...
+zeta = (2112004045).to_bytes(4)
 
 def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
     """
     Keeps a sample S = {k2k3 such that P CCk2k3 > x}, x being the chosen discriminant.
     """
-    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**5, 29446+2**5))):
+    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(2**16))):#29446-2**5, 29446+2**5))):
         # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
         # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
-        k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smultt
+        k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smulwt
         
-        # In ntt.c -> const int32_t zetas[64] = {21932846, 3562152210, 752167598, 3417653460, 2112004045...
-        zeta = 2112004045
-        tmp = smulwt(zeta.to_bytes(4), k0k1k2k3)
+        tmp = smulwt(zeta, k0k1k2k3)
         tmp = smlabt(tmp, q, qa)
 
         rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
@@ -97,10 +97,15 @@ def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
         if max_pcc:
             yield (k2k3, max_pcc)
 
-# !! To plot here, stop the program right after, iterators can only be used once !!
+# !! Iterators can only be used once !!
 
-k2k3 = max(k2k3_guesser(), key=lambda x: x[1])
-rst = np.asarray([hammingWeight(smultt(ciphertext, k2k3)) for ciphertext in ciphertexts])
+guessed = list(k2k3_guesser())
+k2k3 = max(guessed, key=lambda x: x[1])[0]
+print(b's\x06' in map(lambda x: x[0], guessed))
+print(len(guessed))
+tmp = smulwt(zeta, bytes(2) + k2k3)
+tmp = smlabt(tmp, q, qa)
+rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
 pcc_tab = [pearson(sample_trace, rst) for sample_trace in sample_matrix]
 
 plt.plot(pcc_tab)
