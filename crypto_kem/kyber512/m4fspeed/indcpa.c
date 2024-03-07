@@ -348,15 +348,15 @@ void __attribute__ ((noinline)) indcpa_dec(unsigned char *m,
     int i;
     
     trigger_setup();
+    poly_unpackdecompress(&mp, c, 0);
+    poly_ntt(&mp);
     char str[12];
     hal_send_str("++++");
-    for (i = 0; i < sizeof(c); i++){
-        sprintf(str, "%d", c[i]);
+    for (i = 0; i < sizeof(mp); i++){
+        sprintf(str, "%d", mp.coeffs[i]);
         hal_send_str(str);
     }
     hal_send_str("++++");
-    poly_unpackdecompress(&mp, c, 0);
-    poly_ntt(&mp);
     trigger_high();
     poly_frombytes_mul_16_32(r_tmp, &mp, sk);
     trigger_low();

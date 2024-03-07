@@ -1,5 +1,6 @@
 from json import loads
 from tqdm import tqdm
+from typing import Generator, Any
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -9,16 +10,14 @@ def parse_firmware_output(output):
     with open(output, 'r') as f:
         readingCT = False
         ciphertext = bytes()
-        compteur = 0
-        for line in map(lambda l: l.strip('\n'), f.readlines()):
+        for (cpt, line) in enumerate(map(lambda l: l.strip('\n'), f.readlines())):
             if '++++' == line:
                 readingCT = not(readingCT)
                 if readingCT == False:
-                    if compteur % 25 != 0:
+                    if cpt % 25 != 0:
                         ciphertexts.append(ciphertext)
-                    compteur += 1
                     ciphertext = bytes()
-            if readingCT and line != '++++':
+            elif readingCT:
                 ciphertext += int(line).to_bytes()
 
 parse_firmware_output('ciphertexts')
@@ -36,52 +35,72 @@ part_key_length = 2**16
 # max_pearson_corr: ceiling (discriminant) on Pearson's correlation coefficient
 max_pearson_corr = 0.6
 
-# hammingWeight: gives the hamming weight of a byte
 def hammingWeight(byte: bytes) -> int:
+    """
+    Gives the hamming weight of a byte
+    """
     return int.from_bytes(byte).bit_count()
 
-def smultt(byte_1: bytes, byte_2: bytes) -> bytes:
-    return (int.from_bytes(byte_1[3:1:-1]) * int.from_bytes(byte_2[3:1:-1])).to_bytes(4)
+def smultt(bytes_1: bytes, bytes_2: bytes) -> bytes:
+    return (int.from_bytes(bytes_1[3:1:-1]) * int.from_bytes(bytes_2[3:1:-1])).to_bytes(4)
 
-def pkhtb(byte_1: bytes, byte_2: bytes) -> bytes:
-    return byte_1[3:1:-1] + byte_2[1:-1:-1]
+def smulbb(bytes_1: bytes, bytes_2: bytes) -> bytes:
+    return (int.from_bytes(bytes_1[1:-1:-1]) * int.from_bytes(bytes_2[1:-1:-1])).to_bytes(4)
+
+# Rq: name non official
+def smadd(bytes_1 : bytes, bytes_2 : bytes) -> bytes:
+    return (int.from_bytes(bytes_1) + int.from_bytes(bytes_2)).to_bytes(4)
+
+def smlabb(bytes_1 : bytes, bytes_2 : bytes, bytes_3 : bytes) -> bytes:
+    return smadd(smulbb(bytes_1, bytes_2), bytes_3)
+
+def pkhtb(bytes_1: bytes, bytes_2: bytes) -> bytes:
+    return bytes_1[3:1:-1] + bytes_2[1:-1:-1]
+
+prec = np.float64
 
 def pearson(x, y) -> int:
-    xmean = x.mean(dtype=np.float64)
-    ymean = y.mean(dtype=np.float64)
-    xm = x.astype(np.float64) - xmean
-    ym = y.astype(np.float64) - ymean
+    xmean = x.mean(dtype=prec)
+    ymean = y.mean(dtype=prec)
+    xm = x.astype(prec) - xmean
+    ym = y.astype(prec) - ymean
     normxm = np.linalg.norm(xm)
     normym = np.linalg.norm(ym)
     r = np.dot(xm/normxm, ym/normym)
     return max(min(r, 1.0), -1.0)
 
 def pearsonx(xr, y) -> int:
-    ymean = y.mean(dtype=np.float64)
-    ym = y.astype(np.float64) - ymean
+    ymean = y.mean(dtype=prec)
+    ym = y.astype(prec) - ymean
     normym = np.linalg.norm(ym)
     r = np.dot(xr, ym/normym)
     return max(min(r, 1.0), -1.0)
 
+def pearson_traces(rstr) -> int:
+    """
+    Compute Pearson correlation coefficient between Ti and rst for all i and keep the biggest value in absolute PCCk2k3.
+    """
+    pcc_traces = (pcc for pcc in map(lambda sample_trace: abs(pearsonx(rstr, sample_trace)), sample_matrix) \
+                    if pcc > max_pearson_corr)
+    max_pcc = max(pcc_traces, default=0)
+    return max_pcc
 
-# 3. Repeat step 1-2 for all possibilities of k2k3 and keep a sample S = {k2k3 such that P CCk2k3 > x},
-# x being the chosen discriminant.
-def k2k3_guesser():
-    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**3, 2**16))):#29446-2**5, 29446+2**5))):
+def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
+    """
+    Keeps a sample S = {k2k3 such that P CCk2k3 > x}, x being the chosen discriminant.
+    """
+    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**5, 29446+2**5))):
         # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
         # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
         k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smultt
 
         rst = np.asarray([hammingWeight(smultt(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
-        rstmean = rst.mean(dtype=np.float64)
-        rstm = rst.astype(np.float64) - rstmean
+        rstmean = rst.mean(dtype=prec)
+        rstm = rst.astype(prec) - rstmean
         normrstm = np.linalg.norm(rstm)
         rstr = rstm / normrstm
 
-        # # 2. Compute Pearson correlation coefficient between Ti and rst for all i and keep the biggest value in absolute PCCk2k3.
-        pearson_traces = (pcc for pcc in map(lambda sample_trace: abs(pearsonx(rstr, sample_trace)), sample_matrix) \
-                            if pcc > max_pearson_corr)
-        max_pcc = max(pearson_traces, default=0)
+        max_pcc = pearson_traces(rstr)
         if max_pcc:
             yield (k2k3, max_pcc)
 
@@ -105,14 +124,12 @@ for k2k3 in map(lambda k: k[0], k2k3_guesser()):
         k0k1k2k3 = k0k1.to_bytes(2) + k2k3
 
         rst = np.asarray([hammingWeight(pkhtb(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
-        rstmean = rst.mean(dtype=np.float64)
-        rstm = rst.astype(np.float64) - rstmean
+        rstmean = rst.mean(dtype=prec)
+        rstm = rst.astype(prec) - rstmean
         normrstm = np.linalg.norm(rstm)
         rstr = rstm / normrstm
 
-        pearson_traces = (pcc for pcc in map(lambda sample_trace: abs(pearsonx(rstr, sample_trace)), sample_matrix) \
-                            if pcc > max_pearson_corr)
-        max_pcc = max(pearson_traces, default=0)
+        max_pcc = pearson_traces(rstr)
         if max_pcc:
             candidates_k0k1k2k3.append((k0k1k2k3, max_pcc))
 

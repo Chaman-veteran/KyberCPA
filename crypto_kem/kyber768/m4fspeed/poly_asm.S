@@ -3,7 +3,9 @@
 .syntax unified
 .cpu cortex-m4
 .thumb
-
+// bptr represents &mp, the unpacked cipher in ntt representation
+// In frombytes_mul_asm_16_32 function, we have the mapping:
+// tmp -> poly0; tmp2 -> poly2; t0 -> poly1; t1 -> poly3
 .macro doublebasemul_frombytes_asm_16_32 rptr_tmp, bptr, zeta, poly0, poly2, poly1, poly3, tmp, q, qa, qinv
   ldr \poly0, [\bptr], #4
   ldr \poly2, [\bptr], #4
