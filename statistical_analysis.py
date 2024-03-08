@@ -73,7 +73,8 @@ def pearson_traces(rstr) -> int:
 qa = (26632).to_bytes(4)
 q = (3329).to_bytes(4)
 # In ntt.c -> const int32_t zetas[64] = {21932846, 3562152210, 752167598, 3417653460, 2112004045, 932791035...
-zeta = (2112004045).to_bytes(4)
+zeta = (3417653460).to_bytes(4)
+nzeta = (2**32-int.from_bytes(zeta)).to_bytes(4)
 
 def deserialize(a : bytes):
     # First, we construct t0, then t1
@@ -100,15 +101,14 @@ def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
     """
     Keeps a sample S = {k2k3 such that P CCk2k3 > x}, x being the chosen discriminant.
     """
-    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**5, 29446+2**5))):
+    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(1, 2**16))): #29446-2**7, 29446+2**7))):
         # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
         # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
-        k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smulwt
         t0 = deserialize(bytes(2) + k2k3[0].to_bytes() + bytes(3) + k2k3[1].to_bytes())[0].to_bytes(4)
         tmp = smulwt(zeta, t0)
         tmp = smlabt(tmp, q, qa)
 
-        rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
+        rst = np.asarray([hammingWeight(smultt(ciphertext[4:], tmp)) for ciphertext in ciphertexts])
         rstmean = rst.mean(dtype=prec)
         rstm = rst.astype(prec) - rstmean
         normrstm = np.linalg.norm(rstm)
@@ -118,14 +118,38 @@ def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
         if max_pcc:
             yield (k2k3, max_pcc)
 
+
+def k0k1_guesser() -> Generator[tuple[bytes, int], Any, None]:
+    """
+    Keeps a sample S = {k2k3 such that P CCk2k3 > x}, x being the chosen discriminant.
+    """
+    for k0k1 in map(lambda k: k.to_bytes(2), tqdm(range(16780-2**4, 16780+2**4))):
+        # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
+        # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
+        t1 = deserialize(bytes(3) + k0k1[0].to_bytes() + bytes(1) + k0k1[1].to_bytes() + bytes(1))[1].to_bytes(4)
+        tmp = smulwt(nzeta, t1)
+        tmp = smlabt(tmp, q, qa)
+
+        rst = np.asarray([hammingWeight(smultt(ciphertext[4:], tmp)) for ciphertext in ciphertexts])
+        rstmean = rst.mean(dtype=prec)
+        rstm = rst.astype(prec) - rstmean
+        normrstm = np.linalg.norm(rstm)
+        rstr = rstm / normrstm
+
+        max_pcc = pearson_traces(rstr)
+        if max_pcc:
+            yield (k0k1, max_pcc)
+
 # !! Iterators can only be used once !!
 
 guessed = list(k2k3_guesser())
-print(guessed)
 k2k3 = max(guessed, key=lambda x: x[1])[0]
+print(k2k3)
 print(b's\x06' in map(lambda x: x[0], guessed))
 print(len(guessed))
-tmp = smulwt(zeta, bytes(2) + k2k3)
+
+t0 = deserialize(bytes(2) + k2k3[0].to_bytes() + bytes(3) + k2k3[1].to_bytes())[0].to_bytes(4)
+tmp = smulwt(zeta, t0)
 tmp = smlabt(tmp, q, qa)
 rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
 pcc_tab = [pearson(sample_trace, rst) for sample_trace in sample_matrix]
@@ -136,15 +160,36 @@ plt.ylabel('PCC')
 plt.show()
 exit()
 
+# guessed = list(k0k1_guesser())
+# k0k1 = max(guessed, key=lambda x: x[1])[0]
+# print(k0k1)
+# print(b's\x06' in map(lambda x: x[0], guessed))
+# print(len(guessed))
+
+# t1 = deserialize(bytes(3) + k0k1[0].to_bytes() + bytes(1) + k0k1[1].to_bytes() + bytes(1))[1].to_bytes(4)
+# tmp = smulwt(zeta, t1)
+# tmp = smlabt(tmp, q, qa)
+# rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
+# pcc_tab = [pearson(sample_trace, rst) for sample_trace in sample_matrix]
+
+# plt.plot(pcc_tab)
+# plt.xlabel('Sample')
+# plt.ylabel('PCC')
+# plt.show()
+# exit()
+
 # 4. Fix k2k3 ∈ S, make a guess for k0k1 and compute the result rst′ of pkhtb for all of the ciphertexts.
 # Then compute Pearson correlation between rst′ and the power traces, keep the largest value in absolute PCCk0k1k2k3.
 candidates_k0k1k2k3 = []
 for k2k3 in map(lambda k: k[0], k2k3_guesser()):
     # 5. Redo step 4 for all the k0k1 ∈ S.
-    for k0k1 in range(16780-2**3, 16780+2**3):
+    for k0k1 in range(16780-2**4, 16780+2**4):
         k0k1k2k3 = k0k1.to_bytes(2) + k2k3
+        (t0, t1) = map(lambda x: x.to_bytes(4), deserialize(bytes(2) + k0k1k2k3[2].to_bytes() + k0k1k2k3[0].to_bytes() + bytes(1) + k0k1k2k3[1].to_bytes() + k0k1k2k3[3].to_bytes()))
+        tmp = smulwt(zeta, t0)
+        tmp = smlabt(tmp, q, qa)
 
-        rst = np.asarray([hammingWeight(smuadx(ciphertext, k0k1k2k3)) for ciphertext in ciphertexts])
+        rst = np.asarray([hammingWeight(smlabb(ciphertext, t0, smultt(ciphertext, tmp))) for ciphertext in ciphertexts])
         rstmean = rst.mean(dtype=prec)
         rstm = rst.astype(prec) - rstmean
         normrstm = np.linalg.norm(rstm)
@@ -155,13 +200,17 @@ for k2k3 in map(lambda k: k[0], k2k3_guesser()):
             candidates_k0k1k2k3.append((k0k1k2k3, max_pcc))
 
 # 6. The part of the key k0k1k2k3 with the largest PCCk0k1k2k3 is the correct guess.
-key = max(candidates_k0k1k2k3, key=lambda x: x[1])
+key = max(candidates_k0k1k2k3, key=lambda x: x[1])[0]
 print("Key = ", key)
 awaited_key = b'A\x8cs\x06'
-print(any(map(lambda k: awaited_key == k[0], candidates_k0k1k2k3)))
+print(awaited_key in map(lambda k: k[0], candidates_k0k1k2k3))
 print(len(candidates_k0k1k2k3))
 
-rst = np.asarray([hammingWeight(pkhtb(ciphertext, key[0])) for ciphertext in ciphertexts])
+(t0, t1) = map(lambda x: x.to_bytes(4), deserialize(bytes(2) + key[2].to_bytes() + key[0].to_bytes() + bytes(1) + key[1].to_bytes() + key[3].to_bytes()))
+tmp = smulwt(zeta, t0)
+tmp = smlabt(tmp, q, qa)
+
+rst = np.asarray([hammingWeight(smlabb(ciphertext, t1, smultt(ciphertext, tmp))) for ciphertext in ciphertexts])
 pearson_traces = [pearson(sample_trace, rst) for sample_trace in sample_matrix]
 plt.plot(pearson_traces)
 plt.show()
