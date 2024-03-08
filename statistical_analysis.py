@@ -178,11 +178,11 @@ exit()
 # plt.show()
 # exit()
 
-# 4. Fix k2k3 ∈ S, make a guess for k0k1 and compute the result rst′ of pkhtb for all of the ciphertexts.
-# Then compute Pearson correlation between rst′ and the power traces, keep the largest value in absolute PCCk0k1k2k3.
+# 4. Fix k2k3 in S, make a guess for k0k1 and compute the result rst' of pkhtb for all of the ciphertexts.
+# Then compute Pearson correlation between rst' and the power traces, keep the largest value in absolute PCCk0k1k2k3.
 candidates_k0k1k2k3 = []
 for k2k3 in map(lambda k: k[0], k2k3_guesser()):
-    # 5. Redo step 4 for all the k0k1 ∈ S.
+    # 5. Redo step 4 for all the k0k1 in S.
     for k0k1 in range(16780-2**4, 16780+2**4):
         k0k1k2k3 = k0k1.to_bytes(2) + k2k3
         (t0, t1) = map(lambda x: x.to_bytes(4), deserialize(bytes(2) + k0k1k2k3[2].to_bytes() + k0k1k2k3[0].to_bytes() + bytes(1) + k0k1k2k3[1].to_bytes() + k0k1k2k3[3].to_bytes()))

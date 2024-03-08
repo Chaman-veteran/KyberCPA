@@ -13,7 +13,7 @@
 // https://github.com/newaetech/chipwhisperer/blob/develop/hardware/victims/firmware/hal/stm32f3/stm32f3_hal_lowlevel.c#L661
 // https://github.com/libopencm3/libopencm3/blob/9545471e4861090a77f79c4458eb19ec771e23d9/include/libopencm3/stm32/common/gpio_common_f234.h#L63
 
-// Mappings foireux entre la lib CW et libopencm3
+// Mappings between CW's lib and libopencm3
 #define GPIO_MODER_MODER0 GPIO_MODE_ANALOG
 #define GPIO_OSPEEDER_OSPEEDR0 GPIO_OSPEED_2MHZ
 #define GPIO_OTYPER_OT_0 GPIO_OTYPE_PP
@@ -80,7 +80,7 @@ void HAL_GPIO_Init(uint32_t gpio, uint16_t gpiopin, uint32_t gpiospeed, uint32_t
             /* Configure the External Interrupt or event for the current IO */
             if((gpiomode & EXTI_MODE) == EXTI_MODE) {
                 /* Enable SYSCFG Clock */
-                //__HAL_RCC_SYSCFG_CLK_ENABLE(); // ça marche de laisser ça comme ça ???????
+                //__HAL_RCC_SYSCFG_CLK_ENABLE();
 
                 temp = SYSCFG_EXTICR(position >> 2);
                 temp &= ~((0x0FU) << (4U * (position & 0x03U)));
