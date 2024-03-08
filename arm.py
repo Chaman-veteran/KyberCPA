@@ -3,13 +3,13 @@ Module reproducing some ARM instruction set used in Kyber.
 """
 
 def smultt(bytes_1: bytes, bytes_2: bytes) -> bytes:
-    return (int.from_bytes(bytes_1[3:1:-1], signed=True) * int.from_bytes(bytes_2[3:1:-1], signed=True)).to_bytes(4, signed=True)
+    return (int.from_bytes(bytes_1[2:4], signed=True) * int.from_bytes(bytes_2[2:4], signed=True)).to_bytes(4, signed=True)
 
 def smulbb(bytes_1: bytes, bytes_2: bytes) -> bytes:
-    return (int.from_bytes(bytes_1[1:-1:-1], signed=True) * int.from_bytes(bytes_2[1:-1:-1], signed=True)).to_bytes(4, signed=True)
+    return (int.from_bytes(bytes_1[0:2], signed=True) * int.from_bytes(bytes_2[0:2], signed=True)).to_bytes(4, signed=True)
 
 def smulbt(bytes_1: bytes, bytes_2: bytes) -> bytes:
-    return (int.from_bytes(bytes_1[1:-1:-1], signed=True) * int.from_bytes(bytes_2[3:1:-1], signed=True)).to_bytes(4, signed=True)
+    return (int.from_bytes(bytes_1[0:2], signed=True) * int.from_bytes(bytes_2[2:4], signed=True)).to_bytes(4, signed=True)
 
 # vvvvvv : Name non official
 def smadd(bytes_1 : bytes, bytes_2 : bytes) -> bytes:

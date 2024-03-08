@@ -75,16 +75,37 @@ q = (3329).to_bytes(4)
 # In ntt.c -> const int32_t zetas[64] = {21932846, 3562152210, 752167598, 3417653460, 2112004045, 932791035...
 zeta = (2112004045).to_bytes(4)
 
+def deserialize(a : bytes):
+    # First, we construct t0, then t1
+    tmp = a[2]
+    t0 = a[6]
+
+    t1 = (t0 >> 12) & 0xF
+    t0 &= 0xFFF
+    t1 |= tmp << 4
+    t0 |= t1 << 16
+
+    # tmp is free now
+    tmp2 = a[3]
+    tmp3 = a[5]
+
+    t1 = (tmp2 >> 12) & 0xF
+    tmp = tmp2 & 0xFFF
+    t1 |= (tmp3 << 4)
+    t1 = tmp | (t1 << 16)
+    return (t0, t1)
+
+
 def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
     """
     Keeps a sample S = {k2k3 such that P CCk2k3 > x}, x being the chosen discriminant.
     """
-    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(2**16))):#29446-2**5, 29446+2**5))):
+    for k2k3 in map(lambda k: k.to_bytes(2), tqdm(range(29446-2**5, 29446+2**5))):
         # 1. Make a guess for k2k3 (216 possibilities) and compute the result rst = [rst0, ..., rst200]
         # where rsti is the Hamming weight of the operation smultt on line 25 of doublebasemul using the ith ciphertext.
         k0k1k2k3 = bytes(2) + k2k3 # k0k1 will be thrown away in the smulwt
-        
-        tmp = smulwt(zeta, k0k1k2k3)
+        t0 = deserialize(bytes(2) + k2k3[0].to_bytes() + bytes(3) + k2k3[1].to_bytes())[0].to_bytes(4)
+        tmp = smulwt(zeta, t0)
         tmp = smlabt(tmp, q, qa)
 
         rst = np.asarray([hammingWeight(smultt(ciphertext, tmp)) for ciphertext in ciphertexts])
@@ -100,6 +121,7 @@ def k2k3_guesser() -> Generator[tuple[bytes, int], Any, None]:
 # !! Iterators can only be used once !!
 
 guessed = list(k2k3_guesser())
+print(guessed)
 k2k3 = max(guessed, key=lambda x: x[1])[0]
 print(b's\x06' in map(lambda x: x[0], guessed))
 print(len(guessed))
