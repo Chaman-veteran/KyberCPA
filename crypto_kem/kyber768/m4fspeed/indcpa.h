@@ -20,6 +20,7 @@ void indcpa_dec(unsigned char *m,
 
 #endif
 
+// Dependencies to enable the trigger
 #ifndef GPIO_TRIGGER_H
 #define GPIO_TRIGGER_H
 

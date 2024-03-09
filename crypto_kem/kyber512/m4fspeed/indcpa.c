@@ -10,6 +10,7 @@
 #include <stdint.h>
 
 
+// Documentation for GPIO management and related libraries:
 // https://github.com/newaetech/chipwhisperer/blob/develop/hardware/victims/firmware/hal/stm32f3/stm32f3_hal_lowlevel.c#L661
 // https://github.com/libopencm3/libopencm3/blob/9545471e4861090a77f79c4458eb19ec771e23d9/include/libopencm3/stm32/common/gpio_common_f234.h#L63
 
