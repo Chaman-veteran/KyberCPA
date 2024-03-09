@@ -1,12 +1,20 @@
-PATH_TO_FIRMWARE = 'bin/crypto_kem_kyber512_m4fspeed_test.hex'
+"""
+get_traces.py
+
+Module to capture and optionaly save power traces from the ARM Cortex-M4.
+To use it for capture only: python get_traces.py
+To save the capture: python get_traces.py --save-traces y >> ciphertexts 
+"""
 
 from mupq import platforms
 import matplotlib.pyplot as plt
 from json import dumps
 from argparse import ArgumentParser
 
+PATH_TO_FIRMWARE = 'bin/crypto_kem_kyber512_m4fspeed_test.hex'
+
 """
-Note copied from CW documentation when using the segment mode:
+As we are using the segment mode of the CW, we let this note copied from CW documentation when using the segment mode:
 #IMPORTANT - we now need to generate enough triggers such that scope.adc.samples * NUM_TRIGGERS > max_fifo_size
 #            If not the HW won't exit capture mode. In this example code we weill just call the function so
 #            many times.
@@ -32,8 +40,6 @@ cw.scope.adc.fifo_fill_mode = "segment"
 
 print(cw.run(PATH_TO_FIRMWARE))
 
-# print(cw.scope.capture())
-# power_trace = cw.scope.get_last_trace()
 cw.scope.capture_segmented()
 power_traces = cw.scope.get_last_trace_segmented()
 
